@@ -12,11 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import signal  
-import torch
+import signal
 import sys
+
+import torch
 from pytorch_lightning.callbacks import Callback
+
 from nemo.utils import logging
+
 
 class PreemptionCallback(Callback):
     """
@@ -53,7 +56,9 @@ class PreemptionCallback(Callback):
 
         # Check if torch distributed is initialised, as its needed for broadcasting the preemption signal to all the ranks
         if pl_module.device.type == 'cuda':
-            assert torch.distributed.is_available() and torch.distributed.is_initialized(), "Preemption requires torch distributed to be initialized"
+            assert (
+                torch.distributed.is_available() and torch.distributed.is_initialized()
+            ), "Preemption requires torch distributed to be initialized"
         else:
             logging.info("Preemption is supported only on GPUs")
 
@@ -61,7 +66,7 @@ class PreemptionCallback(Callback):
         def master_handler(signum, frame):
             self.release()
             self._interrupted = True
-        
+
         # Handler executed by the non zero ranks
         def ignoring_handler(signum, frame):
             self.release()
@@ -89,7 +94,7 @@ class PreemptionCallback(Callback):
             monitor_candidates = self.checkpoint_callback._monitor_candidates(trainer)
             self.checkpoint_callback._save_last_checkpoint(trainer, monitor_candidates)
             sys.exit(0)
-            
+
     def release(self):
         if self.released:
             return False
