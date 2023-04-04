@@ -827,7 +827,7 @@ class NeMoModelCheckpoint(ModelCheckpoint):
 
     def __init__(
         self,
-        always_save_nemo: bool = False,
+        always_save_nemo: bool = True,
         save_nemo_on_train_end: bool = True,
         save_best_model: bool = False,
         postfix: str = ".nemo",
