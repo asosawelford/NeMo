@@ -355,7 +355,7 @@ class EnglishPhonemesTokenizer(BaseTokenizer):
         'B', 'CH', 'D', 'DH', 'F', 'G',
         'HH', 'JH', 'K', 'L', 'M', 'N',
         'NG', 'P', 'R', 'S', 'SH', 'T',
-        'TH', 'V', 'W', 'Y', "RR", "NI",
+        'TH', 'V', 'W', 'Y', "Z", "NI",
     )
     # fmt: on
 
