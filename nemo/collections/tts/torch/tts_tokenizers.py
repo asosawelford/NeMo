@@ -22,4 +22,5 @@ from nemo.collections.common.tokenizers.text_to_speech.tts_tokenizers import (
     GermanCharsTokenizer,
     GermanPhonemesTokenizer,
     IPATokenizer,
+    SpanishCharsTokenizer,
 )
