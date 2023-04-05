@@ -77,7 +77,6 @@ model:
       _target_: nemo.collections.tts.g2p.models.en_us_arpabet.IPAG2P
       phoneme_dict: ${phoneme_dict_path}
       heteronyms: ${heteronyms_path}
-      locale: es-ES
       phoneme_probability: 0.5
       ignore_ambiguous_words: false
       use_chars: true
