@@ -262,7 +262,7 @@ class Phonemes(Base):
         'B', 'CH', 'D', 'DH', 'F', 'G',
         'HH', 'JH', 'K', 'L', 'M', 'N',
         'NG', 'P', 'R', 'S', 'SH', 'T',
-        'TH', 'V', 'W', 'Y', 'Z', 'ZH',
+        'TH', 'V', 'W', 'Y', 'RR', 'NI',
     )
     # fmt: on
 
