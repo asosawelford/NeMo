@@ -27,7 +27,8 @@ lowfreq: 0
 highfreq: null
 window: hann
 
-phoneme_dict_path: ???
+phoneme_dict_path: "scripts/tts_dataset_files/cmudict-0.7b_nv22.10"
+heteronyms_path: "scripts/tts_dataset_files/heteronyms-052722"
 
 model:
   learn_alignment: true
